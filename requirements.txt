@@ -57,4 +57,3 @@ rich==13.7.0
 rpds-py==0.13.1
 scikit-learn==1.2.2
 scipy==1.11.3
-zlib==1.2.13
