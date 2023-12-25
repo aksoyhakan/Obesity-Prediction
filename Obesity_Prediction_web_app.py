@@ -7,8 +7,7 @@ import plotly.express as px
 import joblib
 import time
 from PIL import Image
-import io
-from moviepy.editor import VideoFileClip
+
 
 #image1 = Image.open('Projects/Obesity-Prediction/images.jpeg')
 image2 = Image.open('TheDose_Ep99_FatimaStandord_Obesity-as-a-Disease_3x2.png')
