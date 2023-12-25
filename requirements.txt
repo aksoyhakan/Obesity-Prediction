@@ -34,7 +34,6 @@ mkl-service==2.4.0
 moviepy==1.0.3
 numexpr==2.8.7
 numpy==1.26.0
-numpy-base==1.26.0
 openpyxl==3.1.2
 openssl==3.0.12
 packaging==23.2
