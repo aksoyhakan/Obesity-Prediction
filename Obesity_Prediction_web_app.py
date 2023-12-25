@@ -7,12 +7,11 @@ import plotly.express as px
 import joblib
 import time
 from PIL import Image
-from pytube import YouTube
 import io
 from moviepy.editor import VideoFileClip
 
-image1 = Image.open(r'C:\Users\Meltem AKSOY\Desktop\Obesity-2\images.jpeg')
-image2 = Image.open(r'C:\Users\Meltem AKSOY\Desktop\Obesity-2\TheDose_Ep99_FatimaStandord_Obesity-as-a-Disease_3x2.png')
+#image1 = Image.open('Projects/Obesity-Prediction/images.jpeg')
+image2 = Image.open('TheDose_Ep99_FatimaStandord_Obesity-as-a-Disease_3x2.png')
 st.set_page_config(page_title="Know Your Obesity Risk :question:", layout="wide")
 st.header(":blue[Know Your Obesity] :red[Risk?]")
 tab_home, tab_dataset, tab_vis, tab_model = st.tabs(["Home", "About Dataset", "Charts", "Obesity Level Prediction"])
@@ -23,7 +22,7 @@ inf.markdown("The primary goal of this project is to develop a predictive model 
 inf.markdown("By using the dataset, encompassing crucial variables such as family history with overweight, dietary habits (including frequent consumption of high-caloric food, frequency of vegetable consumption, and consumption of food between meals), lifestyle factors (smoking habits, daily water consumption, calories consumption monitoring, physical activity frequency, time using technology devices, and alcohol consumption), and transportation type used, the aim is to uncover patterns and correlations that contribute to obesity. Through the exploration of these multifaceted factors, the project seeks to provide valuable insights for proactive interventions, enabling individuals to make informed lifestyle choices and potentially reduce the risk of obesity in the future.")
 inf.markdown("Lastly, recognizing the importance of addressing obesity is crucial, given its profound implications for overall health and the increased risk of various health issues. By understanding and predicting obesity, we hope to contribute to the broader effort of promoting healthier lifestyles and preventing potential health risks associated with obesity.")
 
-video_file = open(r'C:\Users\Meltem AKSOY\Desktop\Obesity-2\Recommendations on physical activity for older adults - Nutrition UP 65.mp4', 'rb')
+video_file = open('Recommendations on physical activity for older adults - Nutrition UP 65.mp4', 'rb')
 video_bytes = video_file.read()
 video.video(video_bytes)
 
@@ -59,7 +58,7 @@ column_dataset.markdown(
 
 column_dataset.subheader("Questions of the survey used for initial recollection of information")
 def get_data2():
-    df = pd.read_excel(r"C:\Users\Meltem AKSOY\Desktop\Obesity-2\Kitap1.xlsx")
+    df = pd.read_excel("Kitap1.xlsx")
     return df
 
 df2 = get_data2()
@@ -67,7 +66,7 @@ column_dataset.dataframe(df2)
 
 column_inf.subheader("Dataset")
 def get_data():
-    df = pd.read_csv(r"C:\Users\Meltem AKSOY\Desktop\Obesity-2\ObesityDataSet.csv")
+    df = pd.read_csv("ObesityDataSet.csv")
     return df
 
 df = get_data()
@@ -161,11 +160,11 @@ tab_vis.plotly_chart(fig6, use_container_width=True)
 
 # TAB MODEL
 
-df3 = pd.read_csv(r"C:\Users\Meltem AKSOY\Desktop\Obesity-2\ObesityDataSet.csv")
+df3 = pd.read_csv("ObesityDataSet.csv")
 df3.columns = [col.upper() for col in df3.columns]
 # loading the saved model
-model = joblib.load(r"C:\Users\Meltem AKSOY\Desktop\Obesity-2\rta_model_deploy3.joblib")
-encoder = joblib.load(r"C:\Users\Meltem AKSOY\Desktop\Obesity-2\onehot_encoder.joblib")
+model = joblib.load("rta_model_deploy3.joblib")
+encoder = joblib.load("onehot_encoder.joblib")
 
 #creating option list for dropdown menu
 options_GENDER = ["Select an option", "Female", "Male"]
