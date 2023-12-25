@@ -24,7 +24,6 @@ joblib==1.2.0
 jsonschema==4.20.0
 jsonschema-specifications==2023.11.1
 kiwisolver==1.4.5
-libffi==3.4.4
 lightgbm==4.1.0
 markdown-it-py==3.0.0
 markupsafe==2.1.3
