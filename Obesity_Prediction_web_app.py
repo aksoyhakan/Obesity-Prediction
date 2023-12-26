@@ -71,6 +71,18 @@ def get_data():
 df = get_data()
 column_inf.dataframe(df)
 
+df['Age'] = df['Age'].astype(int)
+df['FCVC'] = df['FCVC'].astype(int)
+df['FAF'] = df['FAF'].astype(int)
+df['TUE'] = df['TUE'].astype(int)
+df['CH2O'] = df['CH2O'].astype(int)
+df['NCP'] = df['NCP'].astype(int)
+
+df['FCVC'] = df['FCVC'].replace({1: "Never", 2: "Sometimes", 3: "Always"})
+df['NCP'] = df['NCP'].replace({1: "One", 2: "Two",3: "Three", 4 : "More than three"})
+df['TUE'] = df['TUE'].replace({0: "0–2 hours", 1: "3–5 hours", 2: "	More than 5 hours"})
+df['FAF'] = df['FAF'].replace({0: "I do not have", 1: "1 or 2 days", 2: "3 or 4 days", 3: "4 or 5 days"})
+df['CH2O'] = df['CH2O'].replace({1: "Less than 1L", 2: "Between 1L and 2L", 3: "More than 2L"})
 
 df["Obesity Level"] = df["NObeyesdad"]
 df["Physical Activity Frequency"] = df["FAF"]
